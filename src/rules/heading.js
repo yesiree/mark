@@ -1,4 +1,5 @@
 module.exports.HeadingRule = {
+  name: 'heading',
   inline: false,
   match: /^[^\S\r\n]*(#{1,6})[^\S\r\n]+([^\n]+)/,
   tokenize: function (match) {
@@ -7,7 +8,7 @@ module.exports.HeadingRule = {
     this.level = level.length
     this.text = text
   },
-  render(token) {
+  render() {
     return `<h${this.level}>${this.text}</h${this.level}>`
   }
 }

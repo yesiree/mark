@@ -11,7 +11,7 @@ const { defaults } = require('./defaults')
 */
 
 
-module.exports.Mark = function Mark(opts = {}) {
+const Mark = module.exports.Mark = function Mark(opts = {}) {
   opts = { ...defaults, ...opts }
   this.lexer = new Lexer(opts)
   this.renderer = new Renderer(opts)

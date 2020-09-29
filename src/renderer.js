@@ -1,4 +1,4 @@
-module.exports.Renderer = function Renderer(opts) {
+const Renderer = module.exports.Renderer = function Renderer(opts) {
   this.opts = opts
 }
 

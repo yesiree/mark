@@ -4,16 +4,29 @@ const marked = require('marked')
 const iterations = 500000
 const markdown = `# Hello
 
-When do you want it?
+This sentence is \`technical\` in nature.
 
 ## Header 2
 
-What do you want?
+This is a very **bold** sentence.
 
 ### Header 3
 
-Now what?`
+This sentence as *emphasis* for dramatic effect
 
+\`\`\`javascript
+const foo = 'bar'
+console.log(foo)
+\`\`\`
+
+This is **advanced** stuff.
+`
+
+function getMarkResults() {
+  const mark = new Mark()
+  const result = mark.convert(markdown)
+  console.log(result)
+}
 
 function testMark() {
   const time = process.hrtime()
@@ -40,3 +53,5 @@ function testMarked() {
 testMark()
 
 testMarked()
+
+getMarkResults()
