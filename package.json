@@ -1,0 +1,32 @@
+{
+  "name": "@yesiree/mark",
+  "version": "0.1.0",
+  "description": "A modern markdown converter",
+  "main": "src/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yesiree/mark.git"
+  },
+  "keywords": [
+    "markdown",
+    "convert",
+    "converter",
+    "html"
+  ],
+  "author": "yesiree",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yesiree/mark/issues"
+  },
+  "homepage": "https://github.com/yesiree/mark#readme",
+  "dependencies": {
+    "marked": "^1.2.0"
+  }
+}
