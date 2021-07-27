@@ -27,6 +27,6 @@
   },
   "homepage": "https://github.com/yesiree/mark#readme",
   "dependencies": {
-    "marked": "^1.2.0"
+    "marked": "^2.0.0"
   }
 }
