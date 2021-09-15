@@ -1,4 +1,4 @@
-const { Mark } = require('../src/index')
+const { Mark } = require('../../src/index')
 const marked = require('marked')
 
 const iterations = 500000

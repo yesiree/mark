@@ -2,12 +2,12 @@ module.exports.TextRule = {
   name: 'text',
   inline: true,
   match: /^[^\n*`]+/,
-  tokenize: function (match) {
+  tokenize: function (tokenizer, match) {
     const [text] = match
     this.length = text.length
     this.text = text
   },
-  render() {
+  render(renderer) {
     return this.text
   }
 }

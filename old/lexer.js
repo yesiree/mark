@@ -4,8 +4,7 @@ const Lexer = module.exports.Lexer = function Lexer(opts) {
   this.blockRules = []
   this.inlineRules = []
   const lexInline = this.lexWithRules.bind(this, this.inlineRules)
-  const l = ruleset.length
-  for (let i = 0; i < l; i++) {
+  for (let i = 0, l = ruleset.length; i < l; i++) {
     const rule = ruleset[i]
     rule.tokenize.prototype.render = rule.render
     rule.tokenize.prototype.lexInline = lexInline
