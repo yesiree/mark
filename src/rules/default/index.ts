@@ -9,7 +9,7 @@ import { orderedList } from './ordered-list'
 import { strong } from './strong'
 import { unorderedList } from './unordered-list'
 
-export const ruleset = [
+export const ruleset = {
   heading,
   blockquote,
   orderedList,
@@ -20,22 +20,4 @@ export const ruleset = [
   strong,
   em,
   code
-]
-
-const test = ruleset.map(rule => {
-  switch (rule.name) {
-    case 'heading':
-      rule = {
-        ...rule,
-        render(token) {
-          const content = token
-            .childTokens
-            .map(x => x.render())
-            .join('')
-          return `<h${token.level}>${content}</h${token.level}>`
-        }
-      }
-      break
-  }
-  return rule
-})
+}

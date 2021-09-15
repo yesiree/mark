@@ -2,12 +2,11 @@ import { Options } from './interfaces/options.interface'
 import { Token } from './interfaces/token.interface'
 
 
-export function Renderer(opts: Options) {
-  this.opts = opts
-}
+export class Renderer {
 
-Renderer.prototype.render = function render(tokens: Token[]): string {
-  return tokens
-    .map(token => token.render())
-    .join('')
+  constructor(private opts: Options) { }
+
+  render(tokens: Token[]): string {
+    return tokens.map(x => x.render()).join('')
+  }
 }

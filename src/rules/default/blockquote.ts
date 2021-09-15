@@ -1,28 +1,24 @@
+import { InlineParserFn } from '../../interfaces/rule.interface'
+import { Token } from '../../interfaces/token.interface'
+
 export const blockquote = {
   block: true,
   name: 'blockquote',
   repeat: true,
   match: /^\s*>\s+([^\n]+)[\s]*/g,
-  // match: /^>\s([^\n]*)/,
-  tokenize(matches, inline) {
+  tokenize(matches: RegExpExecArray[], parseInline: InlineParserFn) {
     return {
       paragraphs: matches.map(match => {
         const [_, content] = match
         return {
-          childTokens: inline(content)
+          childTokens: parseInline(content)
         }
       })
     }
   },
-  render(token) {
+  render(token: Token) {
     const paragraphs = token.paragraphs
-      .map(token => {
-        const content = token
-          .childTokens
-          .map(x => x.render())
-          .join('')
-        return `<p>${content}</p>`
-      })
+      .map((token: Token) => `<p>${token.childTokens}</p>`)
       .join('')
     return `<blockquote>\n${paragraphs}\n</blockquote>`
   }

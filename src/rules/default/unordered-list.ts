@@ -1,27 +1,24 @@
+import { InlineParserFn } from '../../interfaces/rule.interface'
+import { Token } from '../../interfaces/token.interface'
+
 export const unorderedList = {
   block: true,
   name: 'unordered-list',
   repeat: true,
   match: /^\s*-\s+([^\n]+)\s*/g,
-  // match: /^[^\S\n]+(-)[^\S\n]+([^\n]+)/,
-  tokenize(matches, inline) {
+  tokenize(matches: RegExpExecArray[], parseInline: InlineParserFn) {
     return {
       items: matches.map(match => {
         const [_, content] = match
         return {
-          childTokens: inline(content)
+          childTokens: parseInline(content)
         }
       })
     }
   },
-  render(token) {
+  render(token: Token) {
     const items = token.items
-      .map(item => {
-        const content = item.childTokens
-          .map(x => x.render())
-          .join('')
-        return `<li>${content}</li>`
-      })
+      .map((item: Token) => `<li>${item.childTokens}</li>`)
       .join('')
     return `<ul>${items}</ul>`
   }

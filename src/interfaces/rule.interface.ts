@@ -1,10 +1,15 @@
 import { Token } from './token.interface'
 
+
+export type InlineParserFn = (source: string) => Token[]
+
 export interface Rule {
   name: string
-  match: RegExp
+  match?: RegExp
   block?: boolean
-  multi?: boolean
-  tokenize(match: RegExpExecArray): Token
+  repeat?: boolean
+  tags?: [RegExp, RegExp]
+  replacementTags?: [string, string]
+  tokenize(match: RegExpExecArray | RegExpExecArray[], parseInline?: InlineParserFn): Token
   render(token?: Token): string
 }
