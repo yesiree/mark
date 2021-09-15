@@ -1,4 +1,5 @@
 export const codeblock = {
+  block: true,
   name: 'codeblock',
   match: /^\`\`\`([^\n]*)([\s\S]*)\n\`\`\`/,
   tokenize(match) {

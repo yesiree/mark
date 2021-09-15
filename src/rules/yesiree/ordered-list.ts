@@ -1,4 +1,5 @@
 export const orderedList = {
+  block: true,
   name: 'ordered-list',
   repeat: true,
   match: /^\s*\d+\.\s+([^\n]+)\s*/g,

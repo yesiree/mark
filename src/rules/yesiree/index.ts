@@ -9,19 +9,33 @@ import { orderedList } from './ordered-list'
 import { strong } from './strong'
 import { unorderedList } from './unordered-list'
 
-export const ruleset = {
-  block: [
-    heading,
-    blockquote,
-    orderedList,
-    unorderedList,
-    codeblock,
-    line
-  ],
-  inline: [
-    link,
-    strong,
-    em,
-    code
-  ]
-}
+export const ruleset = [
+  heading,
+  blockquote,
+  orderedList,
+  unorderedList,
+  codeblock,
+  line,
+  link,
+  strong,
+  em,
+  code
+]
+
+const test = ruleset.map(rule => {
+  switch (rule.name) {
+    case 'heading':
+      rule = {
+        ...rule,
+        render(token) {
+          const content = token
+            .childTokens
+            .map(x => x.render())
+            .join('')
+          return `<h${token.level}>${content}</h${token.level}>`
+        }
+      }
+      break
+  }
+  return rule
+})

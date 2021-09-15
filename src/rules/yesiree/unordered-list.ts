@@ -1,4 +1,5 @@
 export const unorderedList = {
+  block: true,
   name: 'unordered-list',
   repeat: true,
   match: /^\s*-\s+([^\n]+)\s*/g,

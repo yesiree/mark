@@ -1,4 +1,5 @@
 export const blockquote = {
+  block: true,
   name: 'blockquote',
   repeat: true,
   match: /^\s*>\s+([^\n]+)[\s]*/g,

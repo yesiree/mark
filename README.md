@@ -21,3 +21,22 @@ interface Rule {
   render(): string
 }
 ```
+
+
+const test = ruleset.map(rule => {
+  switch (rule.name) {
+    case 'heading':
+      rule = {
+        ...rule,
+        render(token) {
+          const content = token
+            .childTokens
+            .map(x => x.render())
+            .join('')
+          return `<h${token.level}>${content}</h${token.level}>`
+        }
+      }
+      break
+  }
+  return rule
+})

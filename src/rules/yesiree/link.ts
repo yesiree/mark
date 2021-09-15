@@ -1,4 +1,5 @@
 export const link = {
+  block: false,
   name: 'link',
   match: /^(\[[^\]\n]+\])(\([^)\n]+\))/,
   tokenize(match, inline) {

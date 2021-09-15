@@ -1,4 +1,5 @@
 export const heading = {
+  block: true,
   name: 'heading',
   match: /^(#{1,6})[^\S\n]+([^\n]*)(\n|$)/,
   tokenize(match, inline) {
