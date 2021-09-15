@@ -20,9 +20,9 @@ export const blockquote = {
           .childTokens
           .map(x => x.render())
           .join('')
-        return `  <p>${content}</p>`
+        return `<p>${content}</p>`
       })
-      .join('\n')
+      .join('')
     return `<blockquote>\n${paragraphs}\n</blockquote>`
   }
 }

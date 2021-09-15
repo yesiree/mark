@@ -2,7 +2,6 @@ export const orderedList = {
   name: 'ordered-list',
   repeat: true,
   match: /^\s*\d+\.\s+([^\n]+)\s*/g,
-  // match: /^[^\S\n]+(\d+\.)[^\S\n]+([^\n]+)/,
   tokenize(matches, inline) {
     return {
       items: matches.map(match => {
@@ -19,9 +18,9 @@ export const orderedList = {
         const content = item.childTokens
           .map(x => x.render())
           .join('')
-        return `  <li>${content}</li>`
+        return `<li>${content}</li>`
       })
-      .join('\n')
-    return `<ol>\n${items}\n</ol>`
+      .join('')
+    return `<ol>${items}</ol>`
   }
 }

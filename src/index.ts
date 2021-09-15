@@ -132,7 +132,7 @@ interface Token {
 const render = (tokens: Token[]): string => {
   return tokens
     .map(token => token.render())
-    .join('\n')
+    .join('')
 }
 
 const getTokenAndOffset = (rule, source, parseInline): { skip: number, token: Token | null } => {

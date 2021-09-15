@@ -19,9 +19,9 @@ export const unorderedList = {
         const content = item.childTokens
           .map(x => x.render())
           .join('')
-        return `  <li>${content}</li>`
+        return `<li>${content}</li>`
       })
-      .join('\n')
-    return `<ul>\n${items}\n</ul>`
+      .join('')
+    return `<ul>${items}</ul>`
   }
 }
