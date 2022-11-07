@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/yesiree/mark/issues"
   },
-  "homepage": "https://github.com/yesiree/mark#readme"
+  "homepage": "https://github.com/yesiree/mark#readme",
+  "devDependencies": {
+    "@types/node": "^16.10.3"
+  }
 }

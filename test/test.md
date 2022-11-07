@@ -20,6 +20,7 @@ That's it.  *Pretty simple.*  **There's also a drop-down** option in the upper r
 
 It's easy.  It's not overly bloated, unlike HTML.  Also, as the creator of [markdown] says,
 
+> # NOTE!
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
 > as possible. The idea is that a

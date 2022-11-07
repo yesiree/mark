@@ -1,9 +1,13 @@
 const fs = require('fs')
+const { join } = require('path')
 const { Mark } = require('../dist/index')
-const { ruleset } = require('../dist/rules/default')
+const { ruleset } = require('../dist/rules/light')
 
 
-const markdown = fs.readFileSync('./test/test.md').toString()
+const inputPath = join(__dirname, './test.md')
+const outputPath = join(__dirname, './.ignore/test.html')
+
+const markdown = fs.readFileSync(inputPath).toString()
 const mark = new Mark({ ruleset })
 const html = mark.convert(markdown)
-fs.writeFileSync('./.ignore/test.html', html)
+fs.writeFileSync(outputPath, html)
